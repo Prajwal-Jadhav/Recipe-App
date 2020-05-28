@@ -1,3 +1,5 @@
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import React from "react";
 import Recipe from "./Recipe";
 import "./App.css";
@@ -45,19 +47,25 @@ class App extends React.Component {
         <h1 className="app__heading">Recipe App</h1>
         <p className="app__subheading">created by Prajwal Jadhav ❤</p>
         <form className="form" onSubmit={this.onFormSubmit}>
-          <input
+          <TextField
+            id="outlined-basic"
+            label="Search"
+            variant="outlined"
             className="input__field"
             type="text"
             value={this.state.inputValue}
             onChange={e => this.setState({ inputValue: e.target.value })}
           />
-          <button
+          <Button
+            variant="contained"
+            color="secondary"
+            disableElevation
             className="submit__button"
             type="submit"
             onClick={this.onButtonClick}
           >
             Search
-          </button>
+          </Button>
         </form>
         <Recipe recipes={this.state.recipes} />
       </div>

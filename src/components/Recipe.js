@@ -10,7 +10,9 @@ const Recipe = ({ recipes }) => {
             return <li className="recipe__list__item">{ingredient.text}</li>;
           })}
         </ul>
-        <p className="recipe__calories">{recipe.recipe.calories}</p>
+        <p className="recipe__calories">
+          {Math.round(recipe.recipe.calories * 100) / 100} Calories
+        </p>
         <img
           className="recipe__image"
           src={recipe.recipe.image}
